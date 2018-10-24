@@ -4,36 +4,48 @@ using UnityEngine;
 
 public class TargetMovement : MonoBehaviour {
 
-    Rigidbody2D rb2D; // Needs rigidbody to add the forces too.
-    public float speed = 1f; // Speed
-    Vector2 Movement;
-    int continousMovement = 0;
+    // Variables which can be changed manually in unity.
+    public float velocidadMax;
+    public float xMax;
+    public float yMax;
+    public float xMin;
+    public float yMin;
+
+    // Variables that hold the transformation for each axis.
+    private float x;
+    private float y;
 
     // Use this for initialization
-    void Start() {
-        rb2D = GetComponent<Rigidbody2D>();
+    void Start()
+    {
+        x = Random.Range(-velocidadMax, velocidadMax);
+        y = Random.Range(-velocidadMax, velocidadMax);
     }
 
-    private void Update()
+    // Update is called once per frame
+    // When the target hits the boundries it will change direction
+    // If the target is within the boundries the code will not enter an if statement
+    // The previous x & y values will be used
+    void Update()
     {
-        if (continousMovement < 3)
-            continousMovement += 1;
-        else
-        {
-            Movement = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)); // Gives a random vector to move to.
-            continousMovement = 0;
-        }
-            
-    }
+        // If the transformation is greater than the max x boundry
+        if (transform.localPosition.x > xMax)
+            x = Random.Range(-velocidadMax, 0.0f);
 
-    void FixedUpdate()
-    {
-        // code from https://answers.unity.com/questions/1369351/unity-2d-random-movement.html
+        // If the transformation is less than the min x boundry
+        if (transform.localPosition.x < xMin)
+            x = Random.Range(0.0f, velocidadMax);
 
-        rb2D.AddForce(Movement * speed); // Adds the force to the rigidbody with the decided speed.
+        // If the transformation is greater than the max y boundry
+        if (transform.localPosition.y > yMax)
+            y = Random.Range(-velocidadMax, 0.0f);
 
-        // If you need to test the random movement values use 
-        print(Movement);
+        // If the transformation is less than the min y boundry
+        if (transform.localPosition.y < yMin)
+            y = Random.Range(0.0f, velocidadMax);
+
+        // Adjust the position based off the current position and the random values
+        transform.localPosition = new Vector3(transform.localPosition.x + x, transform.localPosition.y + y, transform.localPosition.z);
     }
 
 }
