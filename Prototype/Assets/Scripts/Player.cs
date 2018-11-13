@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
+    // Will be used to send the health of the player
+    public delegate void UpdateHealth(int newHealth);
+    // An event attached to UpdateHealth
+    public static event UpdateHealth OnUpdateHealth;
+
     private Animator gunAnim;
 
 	// Use this for initialization
@@ -27,4 +32,14 @@ public class Player : MonoBehaviour {
             gunAnim.SetBool("isFiring", false);
         }
 	}
+
+    private void SendHealthData(int health)
+    {
+        // Listens to OnUpdateHealth message
+        if (OnUpdateHealth != null)
+        {
+            // Sends the health value
+            OnUpdateHealth(health);
+        }
+    }
 }
