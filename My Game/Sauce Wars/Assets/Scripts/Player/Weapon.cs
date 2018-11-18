@@ -7,7 +7,10 @@ public class Weapon : MonoBehaviour {
 
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
-    public float fireTime = 0.5f;    public bool isFiring = false;
+    public float fireTime = 0.5f;
+
+    private bool isFiring = false;
+
 
     public void SetFiring()
     {
