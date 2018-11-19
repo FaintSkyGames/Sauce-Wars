@@ -13,6 +13,7 @@ public class OnDamagedEvent : UnityEvent<int> { }
 public class HealthSystem : MonoBehaviour {
 
     public int health = 10;
+
     // A unity event
     public UnityEvent onDie;
 

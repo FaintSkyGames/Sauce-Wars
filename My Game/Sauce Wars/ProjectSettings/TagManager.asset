@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Target
   layers:
   - Default
   - TransparentFX
@@ -13,9 +14,9 @@ TagManager:
   - UI
   - 
   - 
-  - Player
   - Player Damage
   - Enemy Health
+  - 
   - 
   - 
   - 
@@ -40,4 +41,25 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 2967226649
+    locked: 0
+  - name: Player
+    uniqueID: 757041129
+    locked: 0
+  - name: Enemys
+    uniqueID: 2113025885
+    locked: 0
+  - name: Targets
+    uniqueID: 1432475011
+    locked: 0
+  - name: FX
+    uniqueID: 876064795
+    locked: 0
+  - name: Bullets
+    uniqueID: 4107516675
+    locked: 0
+  - name: Foreground
+    uniqueID: 2086298695
     locked: 0
