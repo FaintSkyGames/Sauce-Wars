@@ -18,6 +18,7 @@ public class Bullet : MonoBehaviour {
     {
         // ...send a message to reduce the health of what collided...
         collision.transform.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
+        collision.transform.SendMessage("SetWhosBullet", gameObject.tag, SendMessageOptions.DontRequireReceiver);
         // ...then kills itself.
         Die();
     }

@@ -22,8 +22,10 @@ GameObject:
   - component: {fileID: 212830554332906070}
   - component: {fileID: 60106918526004046}
   - component: {fileID: 114759077105560870}
+  - component: {fileID: 114074319476538348}
   - component: {fileID: 114216323407620592}
   - component: {fileID: 114386700396293258}
+  - component: {fileID: 50919789959560956}
   m_Layer: 0
   m_Name: Bacon Target
   m_TagString: Target
@@ -44,6 +46,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50919789959560956
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1058636093234596}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!60 &60106918526004046
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -243,6 +265,18 @@ PolygonCollider2D:
       - {x: 1.3017968, y: -13.429062}
       - {x: 1.6101171, y: -13.394804}
       - {x: 1.7642772, y: -13.360546}
+--- !u!114 &114074319476538348
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1058636093234596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bad18882d2d13c4c993396977573175, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 10
 --- !u!114 &114216323407620592
 MonoBehaviour:
   m_ObjectHideFlags: 1
