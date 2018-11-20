@@ -288,7 +288,12 @@ Prefab:
     - target: {fileID: 114542337962538332, guid: 698c7f7cfd09e2640b85665e26290d26,
         type: 2}
       propertyPath: repeat
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542337962538332, guid: 698c7f7cfd09e2640b85665e26290d26,
+        type: 2}
+      propertyPath: time
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 698c7f7cfd09e2640b85665e26290d26, type: 2}
@@ -542,7 +547,12 @@ Prefab:
     - target: {fileID: 114542337962538332, guid: 698c7f7cfd09e2640b85665e26290d26,
         type: 2}
       propertyPath: repeat
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542337962538332, guid: 698c7f7cfd09e2640b85665e26290d26,
+        type: 2}
+      propertyPath: time
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 698c7f7cfd09e2640b85665e26290d26, type: 2}
@@ -669,7 +679,12 @@ Prefab:
     - target: {fileID: 114542337962538332, guid: 698c7f7cfd09e2640b85665e26290d26,
         type: 2}
       propertyPath: repeat
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542337962538332, guid: 698c7f7cfd09e2640b85665e26290d26,
+        type: 2}
+      propertyPath: time
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 698c7f7cfd09e2640b85665e26290d26, type: 2}
@@ -1233,7 +1248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 1116471272}
   sceneName: Game Over
-  timeLimit: 300
+  timeLimit: 60
 --- !u!114 &1116471272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1603,12 +1618,12 @@ Prefab:
     - target: {fileID: 114542337962538332, guid: 698c7f7cfd09e2640b85665e26290d26,
         type: 2}
       propertyPath: time
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 114542337962538332, guid: 698c7f7cfd09e2640b85665e26290d26,
         type: 2}
       propertyPath: repeat
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 698c7f7cfd09e2640b85665e26290d26, type: 2}
