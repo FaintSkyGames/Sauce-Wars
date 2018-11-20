@@ -6,6 +6,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
+    public GameObject playerScore;
+    public GameObject enemyScore;
+
+    private Scene sceneToLoad;
+
 
     // All methods are public so that buttons can use them
 
@@ -21,8 +26,11 @@ public class GameManager : MonoBehaviour
     {
         print("GameManager - EndGame");
 
+        sceneToLoad = SceneManager.GetSceneByName("Game Over");
         // Loads the Game Over scene
         SceneManager.LoadScene("Game Over");
+        SceneManager.MoveGameObjectToScene(playerScore, sceneToLoad);
+        SceneManager.MoveGameObjectToScene(enemyScore, sceneToLoad);
     }
 
     public void BackToMainMenu()
@@ -31,5 +39,6 @@ public class GameManager : MonoBehaviour
 
         // Loads the Main Menu scene
         SceneManager.LoadScene("Main Menu");
+
     }
 }

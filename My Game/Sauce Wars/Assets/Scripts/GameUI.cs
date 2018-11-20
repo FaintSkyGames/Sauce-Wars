@@ -8,6 +8,9 @@ public class GameUI : MonoBehaviour {
     public int playerScore = 0;
     public int enemyScore = 0;
 
+    public Text playerSceneScoreText;
+    public Text enemySceneScoreText;
+
     public Text PlayerScoreText;
     public Text EnemyScoreText;
 
@@ -36,6 +39,7 @@ public class GameUI : MonoBehaviour {
         //print("updating score");
         playerScore += Score;
         PlayerScoreText.text = "SCORE: " + playerScore.ToString();
+        playerSceneScoreText.text = playerScore.ToString();
     }
 
     private void UpdateScoreEnemy(int Score)
@@ -45,5 +49,6 @@ public class GameUI : MonoBehaviour {
         //print("updating score");
         enemyScore += Score;
         EnemyScoreText.text = "ENEMY SCORE: " + enemyScore.ToString();
+        enemySceneScoreText.text = enemyScore.ToString();
     }
 }
