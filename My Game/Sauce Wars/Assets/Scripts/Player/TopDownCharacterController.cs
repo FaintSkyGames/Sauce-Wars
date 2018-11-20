@@ -11,6 +11,8 @@ public class TopDownCharacterController : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        print("TopDownCharacterController - Start");
+
         //Gets the rigidbody from the character
         rigidbody2D = GetComponent<Rigidbody2D>();
     }
@@ -18,6 +20,8 @@ public class TopDownCharacterController : MonoBehaviour {
     // Update is called once per frame
     void FixedUpdate()
     {
+        print("TopDownCharacterController - FixedUpdate");
+
         //gets input along x-axis
         float x = Input.GetAxis("Horizontal");
         //gets input along y-axis

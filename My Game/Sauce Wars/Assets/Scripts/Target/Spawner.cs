@@ -13,6 +13,9 @@ public class Spawner : MonoBehaviour
 
     public void Spawn()
     {
+        print("Spawner - Spawn");
+
+
         // Ensure there are no more than 50 targets before spawning another
         if (GameObject.FindGameObjectsWithTag("Target").Length < 50)
         {

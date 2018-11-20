@@ -20,11 +20,15 @@ public class SceneTimer : MonoBehaviour {
 
     void Start()
     {
+        print("SceneTimer - Start");
+
         slider.maxValue = timeLimit;
     }
 
     void Update()
     {
+        print("SceneTimer - Update");
+
         // deltaTime is the time (measured in seconds) since the previous Update step
         // it's typically very small, e.g. 1/60th of a second ~= 0.0167F
         this.timer += Time.deltaTime;

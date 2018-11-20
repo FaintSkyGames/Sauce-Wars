@@ -14,6 +14,8 @@ public class MouseSmoothLook : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        print("MouseSmoothLook - Update");
+
         Vector3 target = theCamera.ScreenToWorldPoint(Input.mousePosition);
         Vector3 difference = target - transform.position;
         difference.Normalize();

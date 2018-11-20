@@ -12,6 +12,8 @@ public class SmoothFollow : MonoBehaviour {
     // Update is called once per frame
     void FixedUpdate()
     {
+        print("smoothfollow - FixedUpdate");
+
         //creates a new position using target and camera's z
         Vector3 newPos = new Vector3(target.position.x, target.position.y, transform.position.z);
         //asign position of camera using Lerp animation

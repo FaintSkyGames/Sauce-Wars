@@ -14,11 +14,15 @@ public class Weapon : MonoBehaviour {
 
     public void SetFiring()
     {
+        print("Weapon - SetFiring");
+
         isFiring = false;
     }
 
     public void Fire()
     {
+        print("Weapon - Fire");
+
         isFiring = true;
         Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
         if (GetComponent<AudioSource>() != null)
@@ -30,6 +34,8 @@ public class Weapon : MonoBehaviour {
     // Update is called once per frame
     private void Update()
     {
+        print("Weapon - Update");
+
         if (Input.GetMouseButton(0))
         {
             if (!isFiring)

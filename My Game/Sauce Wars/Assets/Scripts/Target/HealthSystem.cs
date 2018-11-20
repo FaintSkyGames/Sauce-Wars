@@ -18,6 +18,8 @@ public class HealthSystem : MonoBehaviour {
 
     public void TakeDamage(int damage)
     {
+        print("HealthSystem - TakeDamage");
+
         health -= damage;
         onDamaged.Invoke(health);
         if (health < 1)

@@ -13,6 +13,8 @@ public class GameUI : MonoBehaviour {
 
     private void OnEnable()
     {
+        print("GameUI - OnEnable");
+
         //AddScore.OnSendScore += UpdateScore;
         AddScore.OnSendScorePlayer += UpdateScorePlayer;
         AddScore.OnSendScoreEnemy += UpdateScoreEnemy;
@@ -20,6 +22,8 @@ public class GameUI : MonoBehaviour {
 
     private void OnDisable()
     {
+        print("GameUI - OnDisable");
+
         //AddScore.OnSendScore -= UpdateScore;
         AddScore.OnSendScorePlayer -= UpdateScorePlayer;
         AddScore.OnSendScoreEnemy -= UpdateScoreEnemy;
@@ -27,6 +31,8 @@ public class GameUI : MonoBehaviour {
 
     private void UpdateScorePlayer(int Score)
     {
+        print("GameUI - UpdateScorePlayer");
+
         //print("updating score");
         playerScore += Score;
         PlayerScoreText.text = "SCORE: " + playerScore.ToString();
@@ -34,6 +40,8 @@ public class GameUI : MonoBehaviour {
 
     private void UpdateScoreEnemy(int Score)
     {
+        print("GameUI - UpdateScoreEnemy");
+
         //print("updating score");
         enemyScore += Score;
         EnemyScoreText.text = "ENEMY SCORE: " + enemyScore.ToString();

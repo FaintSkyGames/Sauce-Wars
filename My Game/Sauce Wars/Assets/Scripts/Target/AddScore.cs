@@ -20,6 +20,8 @@ public class AddScore : MonoBehaviour {
     // Recieves the tag of the bullet
     public void SetWhosBullet(string recievedTag)
     {
+        print("AddScore - SetWhosBullet");
+
         // if the tag was player bullet
         if (recievedTag == "Player Bullet")
         {
@@ -31,6 +33,7 @@ public class AddScore : MonoBehaviour {
     // When a zombie dies this will run before its removed
     public void OnDestroy()
     {
+        print("AddScore - OnDestroy");
 
         // If there is nothing listening to the event
         if ((OnSendScorePlayer != null) & (OnSendScorePlayer != null))   //(OnSendScore != null)

@@ -12,6 +12,8 @@ public class TimerEvent : MonoBehaviour {
 
     private void Start()
     {
+        print("TimerEvent - Start");
+
         if (repeat)
         {
             InvokeRepeating("OnTimerComplete", 0, time);
@@ -20,10 +22,13 @@ public class TimerEvent : MonoBehaviour {
         {
             Invoke("OnTimerComplete", time);
         }
+
     }
 
     private void OnTimerComplete()
     {
+        print("TimerEvent - OnTimerComplete");
+
         onTimerComplete.Invoke();
     }
 }

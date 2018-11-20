@@ -5,7 +5,7 @@ using UnityEngine;
 public class Move : MonoBehaviour {
 
     // Variables which can be changed manually in unity.
-    public float velocidadMax = 0.02f;
+    public float velocityMax = 0.02f;
     public float xMax;
     public float yMax;
     public float xMin;
@@ -18,11 +18,13 @@ public class Move : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        print("Move - Start");
+
         float maxrange = 0.5f;
         float minrange = 0.0f;
-        velocidadMax = Random.Range(minrange, maxrange);
-        x = Random.Range(-velocidadMax, velocidadMax);
-        y = Random.Range(-velocidadMax, velocidadMax);
+        velocityMax = Random.Range(minrange, maxrange);
+        x = Random.Range(-velocityMax, velocityMax);
+        y = Random.Range(-velocityMax, velocityMax);
     }
 
     // Update is called once per frame
@@ -31,22 +33,23 @@ public class Move : MonoBehaviour {
     // The previous x & y values will be used
     void Update()
     {
+        print("Move - Update");
 
         // If the transformation is greater than the max x boundry
         if (transform.localPosition.x > xMax)
-            x = Random.Range(-velocidadMax, 0.0f);
+            x = Random.Range(-velocityMax, 0.0f);
 
         // If the transformation is less than the min x boundry
         if (transform.localPosition.x < xMin)
-            x = Random.Range(0.0f, velocidadMax);
+            x = Random.Range(0.0f, velocityMax);
 
         // If the transformation is greater than the max y boundry
         if (transform.localPosition.y > yMax)
-            y = Random.Range(-velocidadMax, 0.0f);
+            y = Random.Range(-velocityMax, 0.0f);
 
         // If the transformation is less than the min y boundry
         if (transform.localPosition.y < yMin)
-            y = Random.Range(0.0f, velocidadMax);
+            y = Random.Range(0.0f, velocityMax);
 
         // Adjust the position based off the current position and the random values
         transform.localPosition = new Vector3(transform.localPosition.x + x, transform.localPosition.y + y, transform.localPosition.z);
