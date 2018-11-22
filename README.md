@@ -33,4 +33,5 @@ Used github to help with verson control.
 <h2>Acknowledgments</h2>
 <ul>
 <li>Billie Thompson(PurpleBooth) for their <a href="https://gist.github.com/PurpleBooth/109311bb0361f32d87a2">readme template</a></li>
+  <li>Popdog for their <a href="http://popdog_fonts.tripod.com">font</a> (Cracked Johnnie).</li>
 </ul>
