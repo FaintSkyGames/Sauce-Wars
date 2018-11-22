@@ -2,7 +2,7 @@
 This project is my assignment for the AINT155 module titled Unity 2D Zombie Shooter. The aim is to make a top down game with the help of the zombie shooter tutorial done in lessons. I have decided to create a shooter with a food theme.
 
 <h2>Running the game</h2>
-To run the game prototype simply download the test build and install. All the code and assets are present in seprate files should you wish to explore in depth.
+To run the game prototype simply download the prototype build folder and run the executable inside. All the code and assets are present in seprate files should you wish to explore in depth.
 
 <h2>Built with</h2>
 <ul>
