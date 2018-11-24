@@ -29,8 +29,8 @@ public class GameManager : MonoBehaviour
         sceneToLoad = SceneManager.GetSceneByName("Game Over");
         // Loads the Game Over scene
         SceneManager.LoadScene("Game Over");
-        SceneManager.MoveGameObjectToScene(playerScore, sceneToLoad);
-        SceneManager.MoveGameObjectToScene(enemyScore, sceneToLoad);
+        DontDestroyOnLoad(playerScore);
+        DontDestroyOnLoad(enemyScore);
     }
 
     public void BackToMainMenu()
