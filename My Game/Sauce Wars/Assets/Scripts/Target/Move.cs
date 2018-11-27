@@ -20,7 +20,7 @@ public class Move : MonoBehaviour {
     {
         print("Move - Start");
 
-        float maxrange = 0.5f;
+        float maxrange = 0.3f;
         float minrange = 0.0f;
         velocityMax = Random.Range(minrange, maxrange);
         x = Random.Range(-velocityMax, velocityMax);
