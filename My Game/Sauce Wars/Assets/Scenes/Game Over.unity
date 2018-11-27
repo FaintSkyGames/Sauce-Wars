@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 102171952}
   - component: {fileID: 102171954}
   - component: {fileID: 102171953}
+  - component: {fileID: 102171955}
   m_Layer: 5
   m_Name: Oposite Score
   m_TagString: Untagged
@@ -145,7 +146,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 407.65002, y: -193.1}
+  m_AnchoredPosition: {x: 347, y: -193.1}
   m_SizeDelta: {x: 281.3, y: 96.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &102171953
@@ -174,19 +175,30 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enemy score
+  m_Text: 'Enemy score: 0'
 --- !u!222 &102171954
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 102171951}
+--- !u!114 &102171955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 102171951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b86f5215b0e8a214b91e79fef40e78e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &189005431
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,6 +432,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 882e8aa910622c44d9bdeec0c72fc82d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerScore: {fileID: 0}
+  enemyScore: {fileID: 0}
 --- !u!4 &928568632
 Transform:
   m_ObjectHideFlags: 0
@@ -930,6 +944,7 @@ GameObject:
   - component: {fileID: 1768215106}
   - component: {fileID: 1768215108}
   - component: {fileID: 1768215107}
+  - component: {fileID: 1768215109}
   m_Layer: 5
   m_Name: Player Score
   m_TagString: Untagged
@@ -952,7 +967,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -278, y: -193.1}
+  m_AnchoredPosition: {x: -367.65, y: -193.1}
   m_SizeDelta: {x: 281.3, y: 96.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1768215107
@@ -981,21 +996,30 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Player score
-
-'
+  m_Text: 'Player score: 0'
 --- !u!222 &1768215108
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1768215105}
+--- !u!114 &1768215109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1768215105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f94bb80b596c114985a22ee1bdaad28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1963277204
 GameObject:
   m_ObjectHideFlags: 0
