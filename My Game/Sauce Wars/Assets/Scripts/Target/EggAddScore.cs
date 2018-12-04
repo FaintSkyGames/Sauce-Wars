@@ -40,14 +40,14 @@ public class EggAddScore : MonoBehaviour
         // If there is nothing listening to the event
         if ((OnSendScorePlayer != null) & (OnSendScorePlayer != null))   //(OnSendScore != null)
         {
-
+            print("In 1st loop");
             // if destroyed by player
             if (collideWithPlayerBullet == true)
             {
                 // Send the score propertry to player
                 print("send player score");
                 // Before sending update time
-                //PlayerPrefs.SetFloat("TimeCompleted", (PlayerPrefs.GetFloat("TimeCompleted") - timeToAdd));
+                PlayerPrefs.SetFloat("TimeCompleted", (PlayerPrefs.GetFloat("TimeCompleted") - timeToAdd));
                 OnSendScorePlayer(score);
             }
             else
