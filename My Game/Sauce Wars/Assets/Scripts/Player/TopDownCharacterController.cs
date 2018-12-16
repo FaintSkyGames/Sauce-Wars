@@ -15,12 +15,16 @@ public class TopDownCharacterController : MonoBehaviour {
 
         //Gets the rigidbody from the character
         rigidbody2D = GetComponent<Rigidbody2D>();
+
+        PlayerPrefs.SetFloat("PlayerSpeed", speed);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         print("TopDownCharacterController - FixedUpdate");
+
+        speed = PlayerPrefs.GetFloat("PlayerSpeed");
 
         //gets input along x-axis
         float x = Input.GetAxis("Horizontal");

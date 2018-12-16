@@ -36,7 +36,7 @@ public class AddScore : MonoBehaviour {
         print("AddScore - OnDestroy");
 
         // If there is nothing listening to the event
-        if ((OnSendScorePlayer != null) & (OnSendScorePlayer != null))   //(OnSendScore != null)
+        if ((OnSendScorePlayer != null) & (OnSendScoreEnemy != null))   //(OnSendScore != null)
         {
             
             // if destroyed by player

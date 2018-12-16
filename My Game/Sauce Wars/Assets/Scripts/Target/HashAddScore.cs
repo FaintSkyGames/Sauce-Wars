@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EggAddScore : MonoBehaviour
+public class HashAddScore : MonoBehaviour
 {
-    public int timeToAdd = 5;
+    public float speedToAdd = 5.0f;
 
     public Collision2D collider;
 
@@ -35,29 +35,31 @@ public class EggAddScore : MonoBehaviour
     // When a zombie dies this will run before its removed
     public void OnDestroy()
     {
-        print("AddScore - OnDestroy");
+        print("Hash Brown - OnDestroy");
 
         // If there is nothing listening to the event
         if ((OnSendScorePlayer != null) & (OnSendScoreEnemy != null))   //(OnSendScore != null)
         {
-            print("In 1st loop");
+
             // if destroyed by player
             if (collideWithPlayerBullet == true)
             {
                 // Send the score propertry to player
-                print("send player score");
-                // Before sending update time
-                PlayerPrefs.SetFloat("TimeCompleted", (PlayerPrefs.GetFloat("TimeCompleted") - timeToAdd));
+                print("send player score - hash");
+                PlayerPrefs.SetFloat("PlayerSpeed", (PlayerPrefs.GetFloat("PlayerSpeed") + speedToAdd));
                 OnSendScorePlayer(score);
             }
             else
             {
                 // Send the score propertry to enemy
-                print("send enemy score");
-                OnSendScoreEnemy(score + 5);
+                print("send enemy score - hash");
+                PlayerPrefs.SetFloat("EnemySpeed", (PlayerPrefs.GetFloat("EnemySpeed") + speedToAdd));
+                OnSendScoreEnemy(score);
             }
 
+        } else
+        {
+            print("Failure 62 - " +  OnSendScorePlayer + " " + OnSendScoreEnemy);
         }
     }
-
 }

@@ -26,6 +26,8 @@ public class GameUI : MonoBehaviour {
         AddScore.OnSendScoreEnemy += UpdateScoreEnemy;
         EggAddScore.OnSendScorePlayer += UpdateScorePlayer;
         EggAddScore.OnSendScoreEnemy += UpdateScoreEnemy;
+        HashAddScore.OnSendScorePlayer += UpdateScorePlayer;
+        HashAddScore.OnSendScoreEnemy += UpdateScoreEnemy;
     }
 
     private void OnDisable()
@@ -37,6 +39,8 @@ public class GameUI : MonoBehaviour {
         AddScore.OnSendScoreEnemy -= UpdateScoreEnemy;
         EggAddScore.OnSendScorePlayer -= UpdateScorePlayer;
         EggAddScore.OnSendScoreEnemy -= UpdateScoreEnemy;
+        HashAddScore.OnSendScorePlayer -= UpdateScorePlayer;
+        HashAddScore.OnSendScoreEnemy -= UpdateScoreEnemy;
 
         int currentPlayerScore = PlayerPrefs.GetInt("PlayerScore");
         if (currentPlayerScore != playerScore)

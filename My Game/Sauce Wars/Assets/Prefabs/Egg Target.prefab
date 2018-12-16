@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68786dde62fcb7942854507f02b27235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToAdd: 60
+  timeToAdd: 5
   score: 10
 --- !u!114 &114523587821537764
 MonoBehaviour:
