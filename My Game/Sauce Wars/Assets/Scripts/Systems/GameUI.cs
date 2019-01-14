@@ -28,6 +28,7 @@ public class GameUI : MonoBehaviour {
         EggAddScore.OnSendScoreEnemy += UpdateScoreEnemy;
         HashAddScore.OnSendScorePlayer += UpdateScorePlayer;
         HashAddScore.OnSendScoreEnemy += UpdateScoreEnemy;
+
     }
 
     private void OnDisable()
