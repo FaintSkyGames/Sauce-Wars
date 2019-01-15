@@ -5,11 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour {
 
-    public AudioClip gameMusic;
-    public AudioClip menuMusic;
-
     public Scene curScene;
-    public Scene prevScene;
     private AudioSource audio;
 
     private void Awake()
@@ -21,44 +17,22 @@ public class AudioManager : MonoBehaviour {
         DontDestroyOnLoad(this.gameObject);
 
         curScene = SceneManager.GetActiveScene();
-        print("This scene is " + curScene.name);
 
-        if (curScene != prevScene)
-        {
-            ChangeMusic();
-            prevScene = curScene;
-        }
+    }
+
+    private void Update()
+    {
+        curScene = SceneManager.GetActiveScene();
+
+        if (curScene.name == "Game")
+            Destroy(this.gameObject);
     }
 
     private void Start()
     {
         AudioSource audio = GetComponent<AudioSource>();
-        curScene = SceneManager.GetActiveScene();
-        prevScene = curScene;
 
         if (curScene.name == "Game")
-        {
-                audio.clip = null;
-        }
-        else
-        {
-            audio.Stop();
-            audio.clip = menuMusic;
-            audio.Play();
-        }
+            Destroy(this.gameObject);
     }
-
-    private void ChangeMusic()
-    {
-
-        if (curScene.name == "Game")
-        {
-            audio.Stop();
-        }
-        else
-        {
-            audio.Play();
-        }
-    }
-
 }

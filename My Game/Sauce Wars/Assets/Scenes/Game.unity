@@ -995,7 +995,13 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 82217918515181262, guid: 8a800aeae5f15fb47a8756868821a190,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8f59e3667db2d2542b62e93a6a9af349, type: 3}
+    m_RemovedComponents:
+    - {fileID: 114459751359891524, guid: 8a800aeae5f15fb47a8756868821a190, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 8a800aeae5f15fb47a8756868821a190, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &890045224
@@ -2017,6 +2023,8 @@ GameObject:
   - component: {fileID: 1563695994}
   - component: {fileID: 1563695995}
   - component: {fileID: 1563695996}
+  - component: {fileID: 1563695997}
+  - component: {fileID: 1563695998}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -2265,6 +2273,35 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &1563695997
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1563695988}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 40f5936eb37e853439fba316a122b265, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1563695998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1563695988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67d9789ad89c5fa41acc02029a9dba42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1584890742 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4056099229173902, guid: 4ceddc8c28e43fb44bdea8b7074da97c,
