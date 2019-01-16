@@ -1,50 +1,73 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
-
-[System.Serializable]
-
-public class EnemySpawnedEvent : UnityEvent<Transform> { }
 
 public class Enemy : MonoBehaviour {
 
-    public GameObject target;
+    public Transform target;
 
-    // Use this for initialization
+    public int distanceToFireTarget = 50;
+
+    public GameObject bulletPrefab;
+    public Transform bulletSpawn;
+    public float fireTime = 0.5f;
+
+    public bool isFiring = true;
+    private Animator shootAnim;
+
     private void Start()
     {
-        target = FindClosestTarget();
-        if (target != null)
-        transform.SendMessage("SetTarget", target.transform, SendMessageOptions.DontRequireReceiver);
+        shootAnim = GetComponent<Animator>();
     }
 
-    void Update()
+
+
+    public void SetFiring()
     {
-        if (target == null)
+        print("Weapon - SetFiring");
+
+        isFiring = false;
+        shootAnim.SetBool("isFiring", false);
+    }
+
+    public void Fire()
+    {
+        print("Weapon - Fire");
+
+        isFiring = true;
+        shootAnim.SetBool("isFiring", true);
+        Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+        if (GetComponent<AudioSource>() != null)
         {
-            target = FindClosestTarget();
-            transform.SendMessage("SetTarget", target.transform, SendMessageOptions.DontRequireReceiver);
+            GetComponent<AudioSource>().Play();
         }
+        Invoke("SetFiring", fireTime);
     }
-
-    public GameObject FindClosestTarget()
+    // Update is called once per frame
+    private void Update()
     {
-        GameObject[] targets;
-        targets = GameObject.FindGameObjectsWithTag("Target");
-        GameObject closest = null;
-        float distance = Mathf.Infinity;
-        Vector3 position = transform.position;
-        foreach (GameObject t in targets)
+        print("Weapon - Update");
+
+        if (target != null)
         {
-            Vector3 diff = t.transform.position - position;
+            Vector3 position = transform.position;
+            Vector3 diff = target.transform.position - position;
             float currrentDistance = diff.sqrMagnitude;
-            if (currrentDistance < distance)
+
+            if (currrentDistance <= distanceToFireTarget)
             {
-                closest = t;
-                distance = currrentDistance;
+                if (!isFiring)
+                {
+                    Fire();
+                }
             }
         }
-        return closest;
     }
+
+
+    public void SetTarget(Transform newTarget)
+    {
+        target = newTarget;
+    }
+
 }
