@@ -16,6 +16,7 @@ public class AddScore : MonoBehaviour {
     public int score = 10;
 
     private bool collideWithPlayerBullet = false;
+    private bool collideWithEnemyBullet = false;
 
     // Recieves the tag of the bullet
     public void SetWhosBullet(string recievedTag)
@@ -27,6 +28,11 @@ public class AddScore : MonoBehaviour {
         {
             // target collided with players bullet
             collideWithPlayerBullet = true;
+        }
+        if (recievedTag == "Enemy Bullet")
+        {
+            // target collided with players bullet
+            collideWithEnemyBullet = true;
         }
     }
     
@@ -46,7 +52,7 @@ public class AddScore : MonoBehaviour {
                 print("send player score");
                 OnSendScorePlayer(score);
             }
-            else
+            else if (collideWithEnemyBullet == true)
             {
                 // Send the score propertry to enemy
                 print("send enemy score");

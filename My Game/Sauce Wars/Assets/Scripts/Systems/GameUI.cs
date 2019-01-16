@@ -48,11 +48,14 @@ public class GameUI : MonoBehaviour {
         {
             PlayerPrefs.SetInt("PlayerScore", playerScore);
         }
-        int currentEnemyScore = PlayerPrefs.GetInt("EnemyScore");
-        if (currentEnemyScore != enemyScore)
-        {
+
+        print("old score " + PlayerPrefs.GetInt("EnemyScore"));
+        //int currentEnemyScore = PlayerPrefs.GetInt("EnemyScore");
+        //if (currentEnemyScore != enemyScore)
+
+        //{
             PlayerPrefs.SetInt("EnemyScore", enemyScore);
-        }
+        //}
     }
 
     private void UpdateScorePlayer(int Score)

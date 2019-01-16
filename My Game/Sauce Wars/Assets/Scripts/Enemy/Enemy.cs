@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,7 +14,7 @@ public class Enemy : MonoBehaviour {
     public Transform bulletSpawn;
     public float fireTime = 0.5f;
 
-    public bool isFiring = true;
+    public bool isFiring = false;
     private Animator shootAnim;
 
     private void Start()
@@ -56,8 +58,10 @@ public class Enemy : MonoBehaviour {
 
             if (currrentDistance <= distanceToFireTarget)
             {
+               
                 if (!isFiring)
                 {
+                    print("!!!!!!");
                     Fire();
                 }
             }
