@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212749189654019114}
   - component: {fileID: 114251853911180068}
   - component: {fileID: 114998042257430644}
+  - component: {fileID: 114650442760725676}
   - component: {fileID: 114957414348549122}
   - component: {fileID: 114346628409955548}
   - component: {fileID: 50914076375185274}
@@ -265,6 +266,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedToAdd: 5
   score: 10
+--- !u!114 &114650442760725676
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1844639161722256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebb17ac88d2369e40985e1ff11997bc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabToSpawn: {fileID: 1455990631723754, guid: ca22a82394087984c84ea65899167c1b,
+    type: 2}
+  adjustmentAngle: 0
 --- !u!114 &114957414348549122
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -282,6 +297,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 114998042257430644}
         m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114650442760725676}
+        m_MethodName: Spawn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

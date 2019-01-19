@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212413276550686654}
   - component: {fileID: 114500323837663628}
   - component: {fileID: 114346266502801640}
+  - component: {fileID: 114430615413898412}
   - component: {fileID: 114676094016374586}
   - component: {fileID: 114758606198899548}
   - component: {fileID: 50871537921906498}
@@ -247,6 +248,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68fe08e57292f0246b4158d6f9b4a6cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114430615413898412
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1115535265690618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebb17ac88d2369e40985e1ff11997bc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabToSpawn: {fileID: 1455990631723754, guid: ca22a82394087984c84ea65899167c1b,
+    type: 2}
+  adjustmentAngle: 0
 --- !u!114 &114500323837663628
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -289,6 +304,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 114430615413898412}
+        m_MethodName: Spawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   onDamaged:
@@ -319,7 +345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedToAdd: -5
-  score: 10
+  score: 8
 --- !u!212 &212413276550686654
 SpriteRenderer:
   m_ObjectHideFlags: 1

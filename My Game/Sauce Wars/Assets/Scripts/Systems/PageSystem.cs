@@ -42,6 +42,7 @@ public class PageSystem : MonoBehaviour {
             page1.SetActive(false);
             currentPage = "Page 2";
             backButton.SetActive(true);
+            
         }
         else if (currentPage == "Page 2")
         {

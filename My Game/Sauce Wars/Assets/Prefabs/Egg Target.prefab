@@ -22,10 +22,12 @@ GameObject:
   - component: {fileID: 212160500849507514}
   - component: {fileID: 114523587821537764}
   - component: {fileID: 114850922868796828}
+  - component: {fileID: 114624225738079826}
   - component: {fileID: 114054299179272688}
   - component: {fileID: 50226142560951726}
   - component: {fileID: 114161572751755200}
   - component: {fileID: 60647197021974624}
+  - component: {fileID: 114917713589238398}
   m_Layer: 0
   m_Name: Egg Target
   m_TagString: Target
@@ -184,6 +186,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 114624225738079826}
+        m_MethodName: Spawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   onDamaged:
@@ -231,6 +244,20 @@ MonoBehaviour:
   yMax: 23
   xMin: -34
   yMin: -23
+--- !u!114 &114624225738079826
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1205753064077648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebb17ac88d2369e40985e1ff11997bc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabToSpawn: {fileID: 1000268135686554, guid: a2de42cdcf8c4f04c832709de85b60fd,
+    type: 2}
+  adjustmentAngle: 0
 --- !u!114 &114850922868796828
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -242,6 +269,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68fe08e57292f0246b4158d6f9b4a6cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114917713589238398
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1205753064077648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebb17ac88d2369e40985e1ff11997bc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabToSpawn: {fileID: 0}
+  adjustmentAngle: 0
 --- !u!212 &212160500849507514
 SpriteRenderer:
   m_ObjectHideFlags: 1
