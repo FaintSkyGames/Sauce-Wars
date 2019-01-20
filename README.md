@@ -37,6 +37,7 @@ Used github to help with verson control.
   <li>Sound bible for their royalty free sounds
   <ol>
     <li>http://soundbible.com/789-Cartoon-Walking.html</li>
+    <li>http://soundbible.com/1598-Electronic-Chime.html</li>
   </ol>
   </li>
 </ul>
