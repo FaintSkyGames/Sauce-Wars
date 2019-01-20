@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: 
+  m_Name: Death_egg
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -16,21 +16,60 @@ AnimationClip:
   m_PositionCurves: []
   m_ScaleCurves: []
   m_FloatCurves: []
-  m_PPtrCurves: []
-  m_SampleRate: 60
+  m_PPtrCurves:
+  - curve:
+    - time: 0
+      value: {fileID: 21300000, guid: cfc50c05bf00fd841becc99ba6fbb2f3, type: 3}
+    - time: 0.1
+      value: {fileID: 21300000, guid: 2514db30e4d5bc24cbe7e88e2a2b0c6c, type: 3}
+    - time: 0.2
+      value: {fileID: 21300000, guid: ca340c6160c63604d9f19d39c5a2139f, type: 3}
+    - time: 0.3
+      value: {fileID: 21300000, guid: e38673adc6c1d904f89d7e947b77af63, type: 3}
+    - time: 0.4
+      value: {fileID: 21300000, guid: 22c1d08db2e018941aa50da7a4d24d1a, type: 3}
+    - time: 0.5
+      value: {fileID: 21300000, guid: 47b3ddcc39996d84da1c5c6c5fe5b7c1, type: 3}
+    - time: 0.6
+      value: {fileID: 21300000, guid: 269394e7497ae1a42bf5c80236cb4774, type: 3}
+    - time: 0.7
+      value: {fileID: 21300000, guid: 8c700e510585e624bb93179e551c334a, type: 3}
+    - time: 0.8
+      value: {fileID: 21300000, guid: c696df0771ff4b645a6fef2135f200a0, type: 3}
+    attribute: m_Sprite
+    path: 
+    classID: 212
+    script: {fileID: 0}
+  m_SampleRate: 10
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
-    genericBindings: []
-    pptrCurveMapping: []
+    genericBindings:
+    - serializedVersion: 2
+      path: 0
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+    pptrCurveMapping:
+    - {fileID: 21300000, guid: cfc50c05bf00fd841becc99ba6fbb2f3, type: 3}
+    - {fileID: 21300000, guid: 2514db30e4d5bc24cbe7e88e2a2b0c6c, type: 3}
+    - {fileID: 21300000, guid: ca340c6160c63604d9f19d39c5a2139f, type: 3}
+    - {fileID: 21300000, guid: e38673adc6c1d904f89d7e947b77af63, type: 3}
+    - {fileID: 21300000, guid: 22c1d08db2e018941aa50da7a4d24d1a, type: 3}
+    - {fileID: 21300000, guid: 47b3ddcc39996d84da1c5c6c5fe5b7c1, type: 3}
+    - {fileID: 21300000, guid: 269394e7497ae1a42bf5c80236cb4774, type: 3}
+    - {fileID: 21300000, guid: 8c700e510585e624bb93179e551c334a, type: 3}
+    - {fileID: 21300000, guid: c696df0771ff4b645a6fef2135f200a0, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1
+    m_StopTime: 0.90000004
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -50,4 +89,11 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.8
+    functionName: Die
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
