@@ -40,4 +40,5 @@ Used github to help with verson control.
     <li>http://soundbible.com/1598-Electronic-Chime.html</li>
   </ol>
   </li>
+  <li>Bensound for their royalty free sound, <a href="https://www.bensound.com/royalty-free-music/track/inspire">Inspire</a></li>
 </ul>
