@@ -14,10 +14,8 @@ public class HashAddScore : MonoBehaviour
     public static event SendScore OnSendScorePlayer;
     public static event SendScore OnSendScoreEnemy;
 
-    // The score you will earn
-    public int score = 10;
-
     private bool collideWithPlayerBullet = false;
+    private bool collideWithEnemyBullet = false;
 
     // Recieves the tag of the bullet
     public void SetWhosBullet(string recievedTag)
@@ -29,6 +27,11 @@ public class HashAddScore : MonoBehaviour
         {
             // target collided with players bullet
             collideWithPlayerBullet = true;
+        }
+        if (recievedTag == "Enemy Bullet")
+        {
+            // target collided with players bullet
+            collideWithEnemyBullet = true;
         }
     }
 
@@ -45,21 +48,43 @@ public class HashAddScore : MonoBehaviour
             if (collideWithPlayerBullet == true)
             {
                 // Send the score propertry to player
-                print("send player score - hash");
-                PlayerPrefs.SetFloat("PlayerSpeed", (PlayerPrefs.GetFloat("PlayerSpeed") + speedToAdd));
-                OnSendScorePlayer(score);
+                print("send player score - hash -" + 10);
+
+                if (PlayerPrefs.GetFloat("PlayerSpeed") + speedToAdd >= 7)
+                {
+                    if (PlayerPrefs.GetFloat("PlayerSpeed") + speedToAdd < 22)
+                    {
+                        PlayerPrefs.SetFloat("PlayerSpeed", (PlayerPrefs.GetFloat("PlayerSpeed") + speedToAdd));
+                    }
+                }
+
+                //PlayerPrefs.SetInt("PlayerScore", (PlayerPrefs.GetInt("PlayerScore") + score));
+                OnSendScorePlayer(10);
+            }
+            else if (collideWithEnemyBullet == true)
+            {
+                // Send the score propertry to enemy
+                print("send enemy score - hash - " + 10);
+
+                if (PlayerPrefs.GetFloat("EnemySpeed") + speedToAdd >= 15)
+                {
+                    if (PlayerPrefs.GetFloat("EnemySpeed") + speedToAdd < 30)
+                    {
+                        PlayerPrefs.SetFloat("EnemySpeed", (PlayerPrefs.GetFloat("EnemySpeed") + speedToAdd));
+                    }
+                }
+
+                //PlayerPrefs.SetInt("EnemyScore", (PlayerPrefs.GetInt("EnemyScore") + score));
+                OnSendScoreEnemy(10);
             }
             else
             {
-                // Send the score propertry to enemy
-                print("send enemy score - hash");
-                PlayerPrefs.SetFloat("EnemySpeed", (PlayerPrefs.GetFloat("EnemySpeed") + speedToAdd));
-                OnSendScoreEnemy(score);
+                print("failure: hash no collision detected");
             }
 
         } else
         {
-            print("Failure 62 - " +  OnSendScorePlayer + " " + OnSendScoreEnemy);
+            print("Failure: something is listening");
         }
     }
 }

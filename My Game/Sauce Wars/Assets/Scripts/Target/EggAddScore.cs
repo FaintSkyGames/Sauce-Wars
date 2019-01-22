@@ -14,10 +14,8 @@ public class EggAddScore : MonoBehaviour
     public static event SendScore OnSendScorePlayer;
     public static event SendScore OnSendScoreEnemy;
 
-    // The score you will earn
-    public int score = 10;
-
     private bool collideWithPlayerBullet = false;
+    private bool collideWithEnemyBullet = false;
 
     // Recieves the tag of the bullet
     public void SetWhosBullet(string recievedTag)
@@ -29,6 +27,11 @@ public class EggAddScore : MonoBehaviour
         {
             // target collided with players bullet
             collideWithPlayerBullet = true;
+        }
+        if (recievedTag == "Enemy Bullet")
+        {
+            // target collided with players bullet
+            collideWithEnemyBullet = true;
         }
     }
 
@@ -48,13 +51,23 @@ public class EggAddScore : MonoBehaviour
                 print("send player score");
                 // Before sending update time
                 PlayerPrefs.SetFloat("TimeCompleted", (PlayerPrefs.GetFloat("TimeCompleted") - timeToAdd));
-                OnSendScorePlayer(score);
+
+                print("player egg score " + 10);
+                //PlayerPrefs.SetInt("PlayerScore", (PlayerPrefs.GetInt("PlayerScore") + score));
+                OnSendScorePlayer(10);
             }
-            else
+            else if(collideWithEnemyBullet == true)
             {
                 // Send the score propertry to enemy
                 print("send enemy score");
-                OnSendScoreEnemy(score + 5);
+
+                print("enemy egg score " + 15);
+                //PlayerPrefs.SetInt("EnemyScore", (PlayerPrefs.GetInt("EnemyScore") + score));
+                OnSendScoreEnemy(15);
+            }
+            else
+            {
+                print("failure: no collision detected");
             }
 
         }

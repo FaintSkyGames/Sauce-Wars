@@ -11,9 +11,6 @@ public class DisplayWinner : MonoBehaviour {
             GetComponent<Text>().text = "Congratulations, you won!";
          else
             GetComponent<Text>().text = "Better luck next time.";
-
-
-
     }
 	
 	// Update is called once per frame

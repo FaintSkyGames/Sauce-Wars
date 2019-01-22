@@ -53,5 +53,6 @@ public class Move : MonoBehaviour {
 
         // Adjust the position based off the current position and the random values
         transform.localPosition = new Vector3(transform.localPosition.x + x, transform.localPosition.y + y, transform.localPosition.z);
+   
     }
 }

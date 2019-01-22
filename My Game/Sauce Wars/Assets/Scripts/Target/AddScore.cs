@@ -12,9 +12,6 @@ public class AddScore : MonoBehaviour {
     public static event SendScore OnSendScorePlayer;
     public static event SendScore OnSendScoreEnemy;
 
-    // The score you will earn
-    public int score = 10;
-
     private bool collideWithPlayerBullet = false;
     private bool collideWithEnemyBullet = false;
 
@@ -50,13 +47,17 @@ public class AddScore : MonoBehaviour {
             {
                 // Send the score propertry to player
                 print("send player score");
-                OnSendScorePlayer(score);
+
+                //PlayerPrefs.SetInt("PlayerScore", (PlayerPrefs.GetInt("PlayerScore") + score));
+                OnSendScorePlayer(10);
             }
             else if (collideWithEnemyBullet == true)
             {
                 // Send the score propertry to enemy
                 print("send enemy score");
-                OnSendScoreEnemy(score);
+
+                //PlayerPrefs.SetInt("EnemyScore", (PlayerPrefs.GetInt("EnemyScore") + score));
+                OnSendScoreEnemy(10);
             }
                 
         }

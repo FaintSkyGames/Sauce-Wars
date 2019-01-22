@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!60 &14893742
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -709,7 +709,7 @@ GameObject:
   - component: {fileID: 298408343}
   - component: {fileID: 298408342}
   m_Layer: 5
-  m_Name: Player Score origin
+  m_Name: Player Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -822,6 +822,10 @@ Prefab:
       value: 
       objectReference: {fileID: 1058636093234596, guid: 237d5bf2029c6e6479682967d7d613b4,
         type: 2}
+    - target: {fileID: 1465196095479274, guid: 992d32d9b2267a74b98837bd68d6c8ac, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 992d32d9b2267a74b98837bd68d6c8ac, type: 2}
   m_IsPrefabParent: 0
@@ -1022,6 +1026,10 @@ Prefab:
       propertyPath: m_Name
       value: HB Spawner TR
       objectReference: {fileID: 0}
+    - target: {fileID: 1363030763249098, guid: 698c7f7cfd09e2640b85665e26290d26, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 698c7f7cfd09e2640b85665e26290d26, type: 2}
   m_IsPrefabParent: 0
@@ -1075,6 +1083,10 @@ Prefab:
       value: 
       objectReference: {fileID: 1058636093234596, guid: 237d5bf2029c6e6479682967d7d613b4,
         type: 2}
+    - target: {fileID: 1363030763249098, guid: 698c7f7cfd09e2640b85665e26290d26, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 698c7f7cfd09e2640b85665e26290d26, type: 2}
   m_IsPrefabParent: 0
@@ -1514,6 +1526,10 @@ Prefab:
       propertyPath: m_Name
       value: Egg Spawner BR
       objectReference: {fileID: 0}
+    - target: {fileID: 1526704967045434, guid: 4ceddc8c28e43fb44bdea8b7074da97c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ceddc8c28e43fb44bdea8b7074da97c, type: 2}
   m_IsPrefabParent: 0
@@ -1848,7 +1864,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 1116471272}
   sceneName: Game Over
-  timeLimit: 120
+  timeLimit: 40
 --- !u!114 &1116471272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1908,7 +1924,7 @@ GameObject:
   - component: {fileID: 1147809955}
   - component: {fileID: 1147809954}
   m_Layer: 5
-  m_Name: Enemy Score origin
+  m_Name: Enemy Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2079,6 +2095,10 @@ Prefab:
       value: 
       objectReference: {fileID: 1115535265690618, guid: d3ea137098e13b94a92a58da6135fd9f,
         type: 2}
+    - target: {fileID: 1526704967045434, guid: 4ceddc8c28e43fb44bdea8b7074da97c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ceddc8c28e43fb44bdea8b7074da97c, type: 2}
   m_IsPrefabParent: 0
@@ -2288,7 +2308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebb0f6834baa9904fa153b0523cbb0a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 14893749}
+  target: {fileID: 1563695990}
   smoothing: 60
 --- !u!1 &1563695988
 GameObject:
@@ -2687,6 +2707,10 @@ Prefab:
       value: 
       objectReference: {fileID: 1058636093234596, guid: 237d5bf2029c6e6479682967d7d613b4,
         type: 2}
+    - target: {fileID: 1526704967045434, guid: 4ceddc8c28e43fb44bdea8b7074da97c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ceddc8c28e43fb44bdea8b7074da97c, type: 2}
   m_IsPrefabParent: 0
@@ -2751,6 +2775,15 @@ Prefab:
     - target: {fileID: 1363030763249098, guid: 698c7f7cfd09e2640b85665e26290d26, type: 2}
       propertyPath: m_Name
       value: Egg Spawner TL
+      objectReference: {fileID: 0}
+    - target: {fileID: 114353674292057234, guid: 698c7f7cfd09e2640b85665e26290d26,
+        type: 2}
+      propertyPath: repeat
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1363030763249098, guid: 698c7f7cfd09e2640b85665e26290d26, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 698c7f7cfd09e2640b85665e26290d26, type: 2}
@@ -2866,6 +2899,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerScore: 0
   enemyScore: 0
+  scoreToAdd: 0
   PlayerScoreText: {fileID: 298408342}
   EnemyScoreText: {fileID: 1147809954}
 --- !u!1 &2016294291

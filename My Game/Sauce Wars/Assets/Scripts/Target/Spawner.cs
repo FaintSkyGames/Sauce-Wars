@@ -33,7 +33,6 @@ public class Spawner : MonoBehaviour
             if (secondPrefabToSpawn != null)
             {
                 rndNumber = Random.Range(0, 10);
-                print(rndNumber);
                 if (rndNumber < 5)
                 {
                     // Spawn prefab into scene

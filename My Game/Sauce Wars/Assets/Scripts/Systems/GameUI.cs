@@ -11,6 +11,8 @@ public class GameUI : MonoBehaviour {
     //public Text playerSceneScoreText;
     //public Text enemySceneScoreText;
 
+    public int scoreToAdd;
+
     public delegate void UpdateScore(int theScore);
     public static event UpdateScore UpdateCharacterScore;
 
@@ -21,27 +23,42 @@ public class GameUI : MonoBehaviour {
     {
         print("GameUI - OnEnable");
 
+        //PlayerPrefs.SetInt("PlayerScore", 0);
+        //PlayerPrefs.SetInt("EnemyScore", 0);
+        EnemyScoreText.text = "ENEMY SCORE: " + playerScore;
+        PlayerScoreText.text = "PLAYER SCORE: " + enemyScore;
+
+
         //AddScore.OnSendScore += UpdateScore;
+
         AddScore.OnSendScorePlayer += UpdateScorePlayer;
         AddScore.OnSendScoreEnemy += UpdateScoreEnemy;
+                
         EggAddScore.OnSendScorePlayer += UpdateScorePlayer;
         EggAddScore.OnSendScoreEnemy += UpdateScoreEnemy;
+
+
         HashAddScore.OnSendScorePlayer += UpdateScorePlayer;
         HashAddScore.OnSendScoreEnemy += UpdateScoreEnemy;
 
+
     }
+
 
     private void OnDisable()
     {
         print("GameUI - OnDisable");
 
         //AddScore.OnSendScore -= UpdateScore;
+
         AddScore.OnSendScorePlayer -= UpdateScorePlayer;
         AddScore.OnSendScoreEnemy -= UpdateScoreEnemy;
         EggAddScore.OnSendScorePlayer -= UpdateScorePlayer;
         EggAddScore.OnSendScoreEnemy -= UpdateScoreEnemy;
+
         HashAddScore.OnSendScorePlayer -= UpdateScorePlayer;
         HashAddScore.OnSendScoreEnemy -= UpdateScoreEnemy;
+
 
         int currentPlayerScore = PlayerPrefs.GetInt("PlayerScore");
         if (currentPlayerScore != playerScore)
@@ -54,9 +71,10 @@ public class GameUI : MonoBehaviour {
         //if (currentEnemyScore != enemyScore)
 
         //{
-            PlayerPrefs.SetInt("EnemyScore", enemyScore);
+        PlayerPrefs.SetInt("EnemyScore", enemyScore);
         //}
     }
+
 
     private void UpdateScorePlayer(int Score)
     {
@@ -68,7 +86,7 @@ public class GameUI : MonoBehaviour {
         UpdateCharacterScore(playerScore);
         //playerSceneScoreText.text = playerScore.ToString();
 
-        
+
     }
 
     private void UpdateScoreEnemy(int Score)
@@ -89,5 +107,6 @@ public class GameUI : MonoBehaviour {
     {
         return enemyScore;
     }
+
 
 }
