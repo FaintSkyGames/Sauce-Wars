@@ -9,9 +9,5 @@ public class DisplayEnemyScore : MonoBehaviour {
 	void Start () {
         GetComponent<Text>().text = "Enemy Score: " + PlayerPrefs.GetInt("EnemyScore").ToString();
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 }

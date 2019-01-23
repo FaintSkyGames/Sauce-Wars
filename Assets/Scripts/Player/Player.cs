@@ -7,11 +7,13 @@ public class Player : MonoBehaviour {
     private Animator shootAnim;
 
 	// Use this for initialization
+    // Gets the animation
 	void Start () {
         shootAnim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
+    // Allows the animation to play if player is firing
 	void Update () {
         if (Input.GetMouseButton(0))
         {

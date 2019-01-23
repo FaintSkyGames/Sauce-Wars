@@ -15,18 +15,17 @@ public class MoveTowardsTarget : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        // Upodates the speed
         speed = PlayerPrefs.GetFloat("EnemySpeed");
 
+        // Addjusts the position to get closer to the target
         if (target != null)
         {
             transform.position = Vector3.MoveTowards(transform.position, target.position, speed * 0.01f);
         }
-        else
-        {
-            
-        }
     }
 
+    // Sets a new target should the last have been killed
     public void SetTarget(Transform newTarget)
     {
         target = newTarget;

@@ -11,9 +11,4 @@ public class DisplayPlayerScore : MonoBehaviour {
 	void Start () {
         GetComponent<Text>().text = "Player Score: " + PlayerPrefs.GetInt("PlayerScore").ToString();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

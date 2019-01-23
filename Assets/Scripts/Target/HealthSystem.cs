@@ -11,15 +11,15 @@ public class OnDamagedEvent : UnityEvent<int> { }
 public class HealthSystem : MonoBehaviour {
 
     public int health = 10;
+
     // A unity event
     public UnityEvent onDie;
 
     public OnDamagedEvent onDamaged;
 
+    // When damage is taken, if the targets health is less than 1 it will die.
     public void TakeDamage(int damage)
     {
-        print("HealthSystem - TakeDamage");
-
         health -= damage;
         onDamaged.Invoke(health);
         if (health < 1)

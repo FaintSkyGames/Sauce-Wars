@@ -14,37 +14,31 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        print("GameManager - StartGame");
-
         // Loads the Game scene
         SceneManager.LoadScene("Game");
     }
 
     public void EndGame()
     {
-        print("GameManager - EndGame");
-
-        sceneToLoad = SceneManager.GetSceneByName("Game Over");
         // Loads the Game Over scene
         SceneManager.LoadScene("Game Over");
     }
 
     public void BackToMainMenu()
     {
-        print("GameManager - BackToMainMenu");
-
         // Loads the Main Menu scene
         SceneManager.LoadScene("Main Menu");
-
     }
 
     public void Instructions()
     {
+        // Loads the instructions
         SceneManager.LoadScene("Instructions");
     }
 
     public void Quit()
     {
+        // Ends the program
         Application.Quit();
     }
 

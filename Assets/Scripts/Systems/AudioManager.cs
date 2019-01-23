@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour {
     public Scene curScene;
     private AudioSource audio;
 
+    // Ensures there is only 1 music object and makes sure the music plays continously
     private void Awake()
     {
         GameObject[] objs = GameObject.FindGameObjectsWithTag("Music");
@@ -20,6 +21,7 @@ public class AudioManager : MonoBehaviour {
 
     }
 
+    // If the scene is the main game destroy the game object so only 1 piece plays
     private void Update()
     {
         curScene = SceneManager.GetActiveScene();
@@ -28,6 +30,7 @@ public class AudioManager : MonoBehaviour {
             Destroy(this.gameObject);
     }
 
+    // If the scene is the main game destroy the game object so only 1 piece plays
     private void Start()
     {
         AudioSource audio = GetComponent<AudioSource>();

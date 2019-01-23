@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DontDestroy : MonoBehaviour {
 
+    // Ensures there is only one music object and that it doesn't get destroyed
     private void Awake()
     {
         GameObject[] objs = GameObject.FindGameObjectsWithTag("Music");

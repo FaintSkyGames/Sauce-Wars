@@ -10,6 +10,7 @@ public class HashAddScore : MonoBehaviour
 
     // Sends the score stored
     public delegate void SendScore(int theScore);
+
     //public static event SendScore OnSendScore;
     public static event SendScore OnSendScorePlayer;
     public static event SendScore OnSendScoreEnemy;
@@ -20,36 +21,31 @@ public class HashAddScore : MonoBehaviour
     // Recieves the tag of the bullet
     public void SetWhosBullet(string recievedTag)
     {
-        print("AddScore - SetWhosBullet");
-
-        // if the tag was player bullet
+        // If the tag was player bullet...
         if (recievedTag == "Player Bullet")
         {
-            // target collided with players bullet
+            // ...target collided with players bullet
             collideWithPlayerBullet = true;
         }
+        // If the tag was enemy bullet...
         if (recievedTag == "Enemy Bullet")
         {
-            // target collided with players bullet
+            // ...target collided with enemy bullet
             collideWithEnemyBullet = true;
         }
     }
 
-    // When a zombie dies this will run before its removed
+    // When a target dies this will run before its removed
     public void OnDestroy()
     {
-        print("Hash Brown - OnDestroy");
-
         // If there is nothing listening to the event
         if ((OnSendScorePlayer != null) & (OnSendScoreEnemy != null))   //(OnSendScore != null)
         {
-
             // if destroyed by player
             if (collideWithPlayerBullet == true)
             {
                 // Send the score propertry to player
-                print("send player score - hash -" + 10);
-
+                // and add speed as long as it stays within boundaries
                 if (PlayerPrefs.GetFloat("PlayerSpeed") + speedToAdd >= 7)
                 {
                     if (PlayerPrefs.GetFloat("PlayerSpeed") + speedToAdd < 22)
@@ -58,14 +54,12 @@ public class HashAddScore : MonoBehaviour
                     }
                 }
 
-                //PlayerPrefs.SetInt("PlayerScore", (PlayerPrefs.GetInt("PlayerScore") + score));
                 OnSendScorePlayer(10);
             }
             else if (collideWithEnemyBullet == true)
             {
                 // Send the score propertry to enemy
-                print("send enemy score - hash - " + 10);
-
+                // and add speed as long as it stays within boundaries
                 if (PlayerPrefs.GetFloat("EnemySpeed") + speedToAdd >= 15)
                 {
                     if (PlayerPrefs.GetFloat("EnemySpeed") + speedToAdd < 30)
@@ -74,17 +68,9 @@ public class HashAddScore : MonoBehaviour
                     }
                 }
 
-                //PlayerPrefs.SetInt("EnemyScore", (PlayerPrefs.GetInt("EnemyScore") + score));
                 OnSendScoreEnemy(10);
             }
-            else
-            {
-                print("failure: hash no collision detected");
-            }
 
-        } else
-        {
-            print("Failure: something is listening");
         }
     }
 }

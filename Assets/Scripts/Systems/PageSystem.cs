@@ -25,15 +25,8 @@ public class PageSystem : MonoBehaviour {
         page6.SetActive(false);
         backButton.SetActive(false);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-        if (true)
-        {
 
-        }
-	}
-
+    // Sets the apropriate UI to show when next is clicked
     public void Next()
     {
         if (currentPage == "Page 1")
@@ -71,6 +64,7 @@ public class PageSystem : MonoBehaviour {
         }
     }
 
+    // Sets the apropriate UI to show when back is clicked
     public void Back()
     {
         if (currentPage == "Page 2")

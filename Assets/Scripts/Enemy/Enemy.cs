@@ -17,39 +17,39 @@ public class Enemy : MonoBehaviour {
     public bool isFiring = false;
     private Animator shootAnim;
 
+    // Gets the animation
     private void Start()
     {
         shootAnim = GetComponent<Animator>();
     }
 
 
-
+    // plays the animation when firing
     public void SetFiring()
     {
-        print("Weapon - SetFiring");
-
         isFiring = false;
         shootAnim.SetBool("isFiring", false);
     }
 
+    // Spawns a bullet and plays chosen sound
     public void Fire()
     {
-        print("Weapon - Fire");
-
         isFiring = true;
         shootAnim.SetBool("isFiring", true);
+
         Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+
         if (GetComponent<AudioSource>() != null)
         {
             GetComponent<AudioSource>().Play();
         }
         Invoke("SetFiring", fireTime);
     }
+
     // Update is called once per frame
+    // When the enemy is within range of the target, fire
     private void Update()
     {
-        print("Weapon - Update");
-
         if (target != null)
         {
             Vector3 position = transform.position;
@@ -58,17 +58,15 @@ public class Enemy : MonoBehaviour {
 
             if (currrentDistance <= distanceToFireTarget)
             {
-               
                 if (!isFiring)
                 {
-                    print("!!!!!!");
                     Fire();
                 }
             }
         }
     }
 
-
+    // Sets a new target when the last dies
     public void SetTarget(Transform newTarget)
     {
         target = newTarget;

@@ -18,10 +18,10 @@ public class Move : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        print("Move - Start");
-
         float maxrange = 0.3f;
         float minrange = 0.0f;
+
+        // Gives the target a random speed and a destination to move towards
         velocityMax = Random.Range(minrange, maxrange);
         x = Random.Range(-velocityMax, velocityMax);
         y = Random.Range(-velocityMax, velocityMax);
@@ -33,8 +33,6 @@ public class Move : MonoBehaviour {
     // The previous x & y values will be used
     void Update()
     {
-        print("Move - Update");
-
         // If the transformation is greater than the max x boundry
         if (transform.localPosition.x > xMax)
             x = Random.Range(-velocityMax, 0.0f);

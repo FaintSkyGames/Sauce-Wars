@@ -9,6 +9,7 @@ public class SmoothLookAtTarget : MonoBehaviour {
     public float adjustmentAngle = 0.0f;
 
     // Update is called once per frame
+    // If a target has been assigned, the enemy will change is position to face the target
     void Update()
     {
         if (target != null)
@@ -20,6 +21,7 @@ public class SmoothLookAtTarget : MonoBehaviour {
         }
     }
 
+    // Gives the enemy a new target should its previous one die
     public void SetTarget(Transform newTarget)
     {
         target = newTarget;

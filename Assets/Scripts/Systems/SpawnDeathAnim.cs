@@ -7,15 +7,6 @@ public class SpawnDeathAnim : MonoBehaviour {
     public GameObject prefabToSpawn;
     public float adjustmentAngle = 0;
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     public void Spawn()
     {
@@ -27,6 +18,7 @@ public class SpawnDeathAnim : MonoBehaviour {
         // Convert rotation into radians
         Quaternion rotationInRadians = Quaternion.Euler(rotationInDegrees);
 
+        //Spawn the animation with corrected position and angle
         Instantiate(prefabToSpawn, transform.position, rotationInRadians);
     }
 }

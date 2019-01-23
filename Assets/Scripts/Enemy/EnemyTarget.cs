@@ -12,6 +12,7 @@ public class EnemyTarget : MonoBehaviour {
     public GameObject target;
 
     // Use this for initialization
+    // Finds the closest target and makes it the target on all scripts
     private void Start()
     {
         target = FindClosestTarget();
@@ -19,6 +20,7 @@ public class EnemyTarget : MonoBehaviour {
         transform.SendMessage("SetTarget", target.transform, SendMessageOptions.DontRequireReceiver);
     }
 
+    // Finds the closest target and makes it the target on all scripts
     void Update()
     {
         if (target == null)
@@ -28,6 +30,7 @@ public class EnemyTarget : MonoBehaviour {
         }
     }
 
+    // Looks at all objects with target tag and calulates the distance
     public GameObject FindClosestTarget()
     {
         GameObject[] targets;

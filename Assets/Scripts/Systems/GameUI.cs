@@ -8,9 +8,6 @@ public class GameUI : MonoBehaviour {
     public int playerScore = 0;
     public int enemyScore = 0;
 
-    //public Text playerSceneScoreText;
-    //public Text enemySceneScoreText;
-
     public int scoreToAdd;
 
     public delegate void UpdateScore(int theScore);
@@ -19,12 +16,9 @@ public class GameUI : MonoBehaviour {
     public Text PlayerScoreText;
     public Text EnemyScoreText;
 
+    // On enable set the text and scores
     private void OnEnable()
     {
-        print("GameUI - OnEnable");
-
-        //PlayerPrefs.SetInt("PlayerScore", 0);
-        //PlayerPrefs.SetInt("EnemyScore", 0);
         EnemyScoreText.text = "ENEMY SCORE: " + playerScore;
         PlayerScoreText.text = "PLAYER SCORE: " + enemyScore;
 
@@ -44,11 +38,9 @@ public class GameUI : MonoBehaviour {
 
     }
 
-
+    // On disable ensure all scores are added and player prefs updated
     private void OnDisable()
     {
-        print("GameUI - OnDisable");
-
         //AddScore.OnSendScore -= UpdateScore;
 
         AddScore.OnSendScorePlayer -= UpdateScorePlayer;
@@ -59,44 +51,23 @@ public class GameUI : MonoBehaviour {
         HashAddScore.OnSendScorePlayer -= UpdateScorePlayer;
         HashAddScore.OnSendScoreEnemy -= UpdateScoreEnemy;
 
-
-        int currentPlayerScore = PlayerPrefs.GetInt("PlayerScore");
-        if (currentPlayerScore != playerScore)
-        {
-            PlayerPrefs.SetInt("PlayerScore", playerScore);
-        }
-
-        print("old score " + PlayerPrefs.GetInt("EnemyScore"));
-        //int currentEnemyScore = PlayerPrefs.GetInt("EnemyScore");
-        //if (currentEnemyScore != enemyScore)
-
-        //{
+        PlayerPrefs.SetInt("PlayerScore", playerScore);
         PlayerPrefs.SetInt("EnemyScore", enemyScore);
-        //}
     }
 
-
+    // When a score is passed from the target update the player score
     private void UpdateScorePlayer(int Score)
     {
-        print("GameUI - UpdateScorePlayer");
-
-        //print("updating score");
         playerScore += Score;
         PlayerScoreText.text = "SCORE: " + playerScore.ToString();
         UpdateCharacterScore(playerScore);
-        //playerSceneScoreText.text = playerScore.ToString();
+     }
 
-
-    }
-
+    // When a score is passed from the target update the enemy score
     private void UpdateScoreEnemy(int Score)
     {
-        print("GameUI - UpdateScoreEnemy");
-
-        //print("updating score");
         enemyScore += Score;
         EnemyScoreText.text = "ENEMY SCORE: " + enemyScore.ToString();
-        // enemySceneScoreText.text = enemyScore.ToString();
     }
 
     public int getPlayerScore()

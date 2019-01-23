@@ -7,13 +7,12 @@ public class TimerEvent : MonoBehaviour {
 
     public float time = 1;
     public bool repeat = false;
+
     public UnityEvent onTimerComplete;
 
 
     private void Start()
     {
-        print("TimerEvent - Start");
-
         if (repeat)
         {
             InvokeRepeating("OnTimerComplete", 0, time);
@@ -22,13 +21,11 @@ public class TimerEvent : MonoBehaviour {
         {
             Invoke("OnTimerComplete", time);
         }
-
     }
 
+    // When timer is complete, run the unity event
     private void OnTimerComplete()
     {
-        print("TimerEvent - OnTimerComplete");
-
         onTimerComplete.Invoke();
     }
 }

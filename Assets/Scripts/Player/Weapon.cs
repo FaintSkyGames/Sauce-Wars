@@ -14,28 +14,26 @@ public class Weapon : MonoBehaviour {
 
     public void SetFiring()
     {
-        print("Weapon - SetFiring");
-
         isFiring = false;
     }
 
+    // Spawn a bullet and play the chosen sound
     public void Fire()
     {
-        print("Weapon - Fire");
-
         isFiring = true;
         Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+
         if (GetComponent<AudioSource>() != null)
         {
             GetComponent<AudioSource>().Play();
         }
         Invoke("SetFiring", fireTime);
     }
+
     // Update is called once per frame
+    // If the mouse button is clicked, fire a bullet
     private void Update()
     {
-        print("Weapon - Update");
-
         if (Input.GetMouseButton(0))
         {
             if (!isFiring)
